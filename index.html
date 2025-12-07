@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>A3: Interactive Visualization</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://unpkg.com/topojson-client@3"></script>
+    </head>
+<body>
+    <h1>U.S. Education & Income Explorer</h1>
+    
+    <!-- Dropdown -->
+    <div id="controls">
+        <label for="xSelect" class="axis-select">Scatter X:
+            <select id="xSelect"></select>
+        </label>
+        <label for="ySelect" class="axis-select">Scatter Y:
+            <select id="ySelect"></select>
+        </label>
+        <button id="clearSelectionBtn">Clear Selection</button>
+    </div>
+
+    <!-- Component Containers -->
+    <div id="layout">
+        <div id="mapContainer">
+            <svg id="mapSvg"></svg> <!-- map to be add TBD -->
+        </div>
+        <div id="scatterContainer">
+            <svg id="scatterSvg"></svg>
+        </div>
+        <div id="bivariateLegend"></div>
+        <div id="filters">
+            <h3>Filters</h3>
+            <button id="addFilterBtn">+ Add Filter</button>
+            <div id="filterList"></div>
+        </div>
+    </div>
+
+    <div id="summaryTable">
+        <h3>Ranked State Summary</h3>
+        <button id="exportTableBtn">Export as CSV</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>State</th>
+                    <th id="xHeader">X</th>
+                    <th id="yHeader">Y</th>
+                    <th>Combined Score</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
